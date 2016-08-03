@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CqB-et-Jce">
+                                <rect key="frame" x="10" y="56" width="165" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="FCA-7x-UTQ"/>
+                                    <constraint firstAttribute="width" constant="165" id="r0W-bM-Cve"/>
+                                </constraints>
+                                <state key="normal" title="异步函数 - 全局并发队列"/>
+                                <connections>
+                                    <action selector="addTaskToConcurrentQueueUsingAsynMethod:" destination="BYZ-38-t0r" eventType="touchUpInside" id="glF-fW-7Xn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tem-Yt-uKg">
+                                <rect key="frame" x="455" y="56" width="135" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="135" id="IIx-WV-T2D"/>
+                                    <constraint firstAttribute="height" constant="30" id="g2m-hO-dGH"/>
+                                </constraints>
+                                <state key="normal" title="异步函数 - 串行队列"/>
+                                <connections>
+                                    <action selector="addTaskToSerialQueueUsingAsynMethod:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cva-Xx-EiY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCV-Zy-Kis">
+                                <rect key="frame" x="10" y="115" width="165" height="30"/>
+                                <state key="normal" title="同步函数 - 全局并发队列"/>
+                                <connections>
+                                    <action selector="addTaskToCurrencyQueueUsingSynMethod:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uXz-G1-YfJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kDY-bz-oXU">
+                                <rect key="frame" x="455" y="115" width="135" height="30"/>
+                                <state key="normal" title="同步函数 - 串行队列"/>
+                                <connections>
+                                    <action selector="addTaskToSerialQueueUsingSynMethod:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LgZ-I0-JtZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gCV-Zy-Kis" firstAttribute="width" secondItem="CqB-et-Jce" secondAttribute="width" id="6Xp-Vw-yO0"/>
+                            <constraint firstItem="gCV-Zy-Kis" firstAttribute="top" secondItem="CqB-et-Jce" secondAttribute="bottom" constant="29" id="E5l-DO-lyM"/>
+                            <constraint firstItem="Tem-Yt-uKg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="36" id="F8p-KN-W86"/>
+                            <constraint firstAttribute="trailing" secondItem="Tem-Yt-uKg" secondAttribute="trailing" constant="10" id="FlB-Vc-N4O"/>
+                            <constraint firstItem="CqB-et-Jce" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="36" id="PVk-46-hu6"/>
+                            <constraint firstItem="kDY-bz-oXU" firstAttribute="trailing" secondItem="Tem-Yt-uKg" secondAttribute="trailing" id="Ru0-NA-tY8"/>
+                            <constraint firstItem="gCV-Zy-Kis" firstAttribute="height" secondItem="CqB-et-Jce" secondAttribute="height" id="Yao-T9-cbE"/>
+                            <constraint firstItem="CqB-et-Jce" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="ZRX-Gd-ibs"/>
+                            <constraint firstItem="kDY-bz-oXU" firstAttribute="height" secondItem="Tem-Yt-uKg" secondAttribute="height" id="bJn-yz-fZh"/>
+                            <constraint firstItem="gCV-Zy-Kis" firstAttribute="leading" secondItem="CqB-et-Jce" secondAttribute="leading" id="mXR-vZ-NH9"/>
+                            <constraint firstItem="kDY-bz-oXU" firstAttribute="width" secondItem="Tem-Yt-uKg" secondAttribute="width" id="oeL-uZ-d6E"/>
+                            <constraint firstItem="kDY-bz-oXU" firstAttribute="top" secondItem="gCV-Zy-Kis" secondAttribute="top" id="wLl-su-pKI"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="245" y="305"/>
+        </scene>
+    </scenes>
+</document>
